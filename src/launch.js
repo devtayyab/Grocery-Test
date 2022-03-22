@@ -48,6 +48,7 @@ export default function Launch({navigation}) {
         name="delay_detail_page"
         onChangeText={e => handleChange('delay_detail_page', e)}
         style={styles.input}
+        maxLength={2}
       />
       <TextInput
         value={data.delay_list_view}
@@ -56,6 +57,7 @@ export default function Launch({navigation}) {
         name="delay_list_view"
         onChangeText={e => handleChange('delay_list_view', e)}
         style={styles.input}
+        maxLength={2}
       />
       <TextInput
         value={data.test_case_id}
@@ -64,6 +66,7 @@ export default function Launch({navigation}) {
         placeholder="test_case_id"
         onChangeText={e => handleChange('test_case_id', e)}
         style={styles.input}
+        maxLength={2}
       />
 
       <Pressable onPress={() => submit()} style={styles.button}>
@@ -79,7 +82,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   button: {
-    marginTop: 20,
+    margin: 20,
     padding: 10,
     elevation: 2,
   },

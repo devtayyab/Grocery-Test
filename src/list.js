@@ -4,7 +4,14 @@
 /* eslint-disable prettier/prettier */
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import {Text, StyleSheet, View, ScrollView, Pressable, ActivityIndicator} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  View,
+  ScrollView,
+  Pressable,
+  ActivityIndicator,
+} from 'react-native';
 import {useSelector} from 'react-redux';
 export default function List({route, navigation}) {
   const {itemId} = route.params;
@@ -29,10 +36,9 @@ export default function List({route, navigation}) {
 
   return (
     <View>
-      <Text style={{color: 'black'}}>Main</Text>
       {state ? (
         <ScrollView>
-          {console.log(orderitem)}
+          {console.log(details)}
           {details?.map((v, i) => {
             return (
               <Pressable key={i}>

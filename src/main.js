@@ -36,14 +36,28 @@ export default function Main({navigation}) {
   }, []);
   return (
     <View>
-      <Image source={{uri:"https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fbanana&psig=AOvVaw2bdmDDxRZawcVeWhiNt_Yk&ust=1648066922395000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIDH3e7F2vYCFQAAAAAdAAAAABAD", width:200,height:200 }}/>
+      <Image
+        source={require('./banana.jpg')}
+        style={{
+          width: 200,
+          height: 200,
+          margin: 30,
+          alignSelf: 'center'
+        }}
+      />
       {allorder ? (
         <ScrollView>
           {console.log(orderitem)}
           {orderitem?.map((v, i) => {
             return (
               <Pressable key={i} onPress={() => handleclick(v.order_id)}>
-                <View style={{  display: 'flex', flexDirection: 'row', justifyContent:'space-between', marginBottom:14}}>
+                <View
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginBottom: 14,
+                  }}>
                   <View style={{alignItems: 'flex-start'}}>
                     <Text style={{color: 'black'}}>{v?.date_time}</Text>
                     <Text style={{color: 'black'}}>{v?.location}</Text>
@@ -53,17 +67,15 @@ export default function Main({navigation}) {
                   </View>
                 </View>
               </Pressable>
-  
             );
           })}
         </ScrollView>
       ) : (
         <View>
-          <ActivityIndicator></ActivityIndicator>
+          <ActivityIndicator />
         </View>
       )}
       <Text>Hello world</Text>
     </View>
   );
 }
-
